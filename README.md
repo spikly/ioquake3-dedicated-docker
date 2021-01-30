@@ -11,9 +11,9 @@ You will need to own a copy of Quake III Arena as the game files (specifically p
 docker pull spikly/q3syn:latest
 ```
 
-### Configure your server using server.cfg
+### Configure your server
 
-Create a plain text file named server.cfg and add the configuration options to set the score limit, game type, number of bots and map rotation. A simple confiuration for a Free For All server is below.
+Create a plain text file named **server.cfg** and add the configuration options to set the score limit, game type, number of bots and map rotation. A simple confiuration for a Free For All server is below.
 
 ```
 seta sv_hostname "YOUR_SERVER_NAME" // The name of your server as you want it to appear in the server browser list
@@ -56,6 +56,10 @@ You can find more detailed server configuration instructions here: https://www.q
 
 ### Run the image:
 
+Before starting your server you will need to know the path to the **server.cfg** file you just created, as well as the path to the base game file **pak0.pk3**
+
+Then run:
+
 ```
 docker run -p 27960:27960/udp -d -v /path/to/your/pak0.pk3:/data/pak0.pk3 -v /path/to/your/server.cfg:/data/server.cfg spikly/q3syn:latest
 ```
@@ -80,4 +84,10 @@ Or if running a server on something other than port 27960:
 
 ```
 \connect YOUR_SERVER_OR_IP:PORT_NUMBER
+```
+
+And if you set a server password in your server.cfg file:
+
+```
+\password YOUR_PASSWORD
 ```
