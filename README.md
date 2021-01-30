@@ -77,13 +77,13 @@ which would start another server using a different config accessible through por
 Open the Quake 3 console and type:
 
 ```
-\connect YOUR_SERVER_OR_IP
+\connect YOUR_SERVER_URL_OR_IP
 ```
 
 Or if running a server on something other than port 27960:
 
 ```
-\connect YOUR_SERVER_OR_IP:PORT_NUMBER
+\connect YOUR_SERVER_URL_OR_IP:PORT_NUMBER
 ```
 
 And if you set a server password in your server.cfg file:
