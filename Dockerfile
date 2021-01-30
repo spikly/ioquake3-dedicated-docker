@@ -15,6 +15,7 @@ LABEL maintainer="spikly"
 COPY --from=0 /root/ioquake3 /home/ioq3srv/ioquake3
 RUN ln -sf /data/pak0.pk3 /home/ioq3srv/ioquake3/baseq3/pak0.pk3 && \
   ln -sf /data/server.cfg /home/ioq3srv/ioquake3/baseq3/server.cfg && \
+  ln -sf /data/maps/ /home/ioq3srv/ioquake3/baseq3/ && \
   adduser ioq3srv -D
 RUN ls /home/ioq3srv/ioquake3/
 
